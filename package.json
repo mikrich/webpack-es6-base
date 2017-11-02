@@ -1,0 +1,38 @@
+{
+  "name": "webpack-es6-base",
+  "version": "0.0.0",
+  "description": "Starter es6 project",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production npm-run-all clean:prod build:prod",
+    "build:dev": "webpack-dev-server --progress --config webpack.dev.config.js --hot",
+    "build:prod": "webpack -p --progress --config webpack.prod.config.js",
+    "build:serve": "npm-run-all build serve:prod",
+    "clean:dev": "rimraf dev/",
+    "clean:prod": "rimraf dist/",
+    "dev": "cross-env NODE_ENV=development npm-run-all clean:dev build:dev",
+    "serve:prod": "serve -p 3000 dist/",
+    "start": "npm run dev",
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint src/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "serve": "^6.4.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}

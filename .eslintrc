@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb-base",
+  "plugins": ["import"],
+  "globals": {
+    "it": true,
+    "expect": true,
+    "window": true,
+    "describe": true,
+    "document": true
+  },
+  "rules": {
+    "comma-dangle": 0
+  }
+}

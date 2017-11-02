@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Hello!</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f4f4;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body onload="dispatchEvent(new Event('handleBodyOnLoad'))">
+    <div id="content">
+      <p>Hello!</p>
+    </div>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+  </body>
+</html>
